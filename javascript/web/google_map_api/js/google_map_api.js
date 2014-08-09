@@ -19,18 +19,18 @@ function setGoogleMap(position) {
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
         map: map,
-        title: 'Here I am'
+        title: 'I\'m a marker'
     });
 
     var infoWindow = new google.maps.InfoWindow({
-        content: 'I\'m a info window'
+        content: 'I\'m a info window<br><img src="img/photo.jpg" width=300>'
     });
 
     google.maps.event.addListener(marker, 'mouseover', function() {
         infoWindow.open(map, marker);
     });
 
-    google.maps.event.addListener(marker,'mouseout', function(){
+    google.maps.event.addListener(marker, 'mouseout', function() {
         infoWindow.close();
     });
 }
