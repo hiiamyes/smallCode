@@ -6,7 +6,8 @@
 1. finally, you can use
 
 ``
-$sqlite3 app.sqlite
+$sqlite3 app.sqlite  
+
 sqlite> select * from photo
 ``
 
