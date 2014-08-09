@@ -7,8 +7,6 @@
 
 ``
 $sqlite3 app.sqlite  
-
 sqlite> select * from photo
 ``
-
 to see the result of db content
