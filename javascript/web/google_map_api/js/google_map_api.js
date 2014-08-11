@@ -9,6 +9,9 @@ function init() {
 }
 
 function setGoogleMap(position) {
+
+    var currentLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
     var mapOptions = {
         center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
         zoom: 12,
@@ -17,7 +20,7 @@ function setGoogleMap(position) {
     var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 
     var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+        position: currentLatLng,
         map: map,
         title: 'I\'m a marker'
     });
@@ -33,4 +36,18 @@ function setGoogleMap(position) {
     google.maps.event.addListener(marker, 'mouseout', function() {
         infoWindow.close();
     });
+
+
+    // add a circle
+    new google.maps.Circle({
+        // strokeColor: '#FF0000',
+        strokeOpacity: 0,
+        // strokeWeight: 2,
+        fillColor: '#3A62FF',
+        fillOpacity: 0.2,
+        map: map,
+        center: currentLatLng,
+        radius: 1000
+    });
+
 }
