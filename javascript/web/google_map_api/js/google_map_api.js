@@ -40,14 +40,19 @@ function setGoogleMap(position) {
 
     // add a circle
     new google.maps.Circle({
-        // strokeColor: '#FF0000',
-        strokeOpacity: 0,
-        // strokeWeight: 2,
+        strokeColor: '#3A62FF',
+        strokeOpacity: 0.5,
+        strokeWeight: 5,
         fillColor: '#3A62FF',
-        fillOpacity: 0.2,
+        fillOpacity: 0,
         map: map,
         center: currentLatLng,
         radius: 1000
+    });
+
+    // 
+    google.maps.event.addListener(map, 'click', function(event) {
+        alert(event.latLng.lat() + '\n' + event.latLng.lng());
     });
 
 }
