@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="gps_editor">
+
+<head>
+
+    <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDiOk65TaGD0I-wsOKeWOufSC8UeqqmHhA"></script>
+    <script src="controller.js"></script>
+
+</head>
+
+<body ng-controller="GPSEditorController">
+    <div id="left_side">
+        <img src="{{photo.url}}" width="100">
+        <div id="latlng">
+            <p>lat: {{photo.lat}}</p>
+            <p>lng: {{photo.lng}}</p>
+        </div>
+        <input placeholder="Enter a place.">
+    </div>
+
+    <div id="right_side">
+        <div id="map_canvas"></div>
+    </div>
+
+
+
+</body>
+
+</html>

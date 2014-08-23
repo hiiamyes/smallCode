@@ -1,0 +1,44 @@
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+p {
+    color: white;
+    text-align: center;
+}
+img {
+    display: block;
+    width: 90%;
+    background-color: white;
+    margin: 5% auto;
+}
+/*#latlng {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}*/
+
+input {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+#left_side {
+    position: relative;
+    float: left;
+    width: 40%;
+    height: 100%;
+    background-color: black;
+}
+#right_side {
+    float: right;
+    width: 60%;
+    height: 100%;
+}
+#map_canvas {
+    height: 100%;
+}
