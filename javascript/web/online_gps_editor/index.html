@@ -11,13 +11,17 @@
 </head>
 
 <body ng-controller="GPSEditorController">
+
     <div id="left_side">
         <img src="{{photo.url}}" width="100">
         <div id="latlng">
             <p>lat: {{photo.lat}}</p>
             <p>lng: {{photo.lng}}</p>
         </div>
-        <input placeholder="Enter a place.">
+
+        <form ng-submit="geocode()">
+            <input type="text" placeholder="Enter a place." ng-model="address">
+        </form>
     </div>
 
     <div id="right_side">

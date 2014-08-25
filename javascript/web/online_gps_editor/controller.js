@@ -5,14 +5,14 @@
         function($scope) {
 
             var photo = {};
+            var geocoder = new google.maps.Geocoder();
+            var map;
 
             photo.url = 'img/photo.jpg';
             photo.lat = 1;
             photo.lng = 1;
 
             $scope.photo = photo;
-
-
 
             // $scope.initGoogleMap = function() {
             //     console.log('init google map');
@@ -33,7 +33,7 @@
                     zoom: 7,
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
-                var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+                map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 
                 var marker = new google.maps.Marker({
                     position: new google.maps.LatLng(23.787701, 120.959473),
@@ -50,6 +50,20 @@
                 });
             }
             $scope.setGoogleMap();
+
+            $scope.geocode = function() {
+                if ($scope.address) {
+                    geocoder.geocode({
+                        'address': $scope.address
+                    }, function(results, status) {
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            map.setCenter(results[0].geometry.location);                            
+                        } else {
+                            alert('Geocode was not successful for the following reason: ' + status);
+                        }
+                    });
+                }
+            }
         }
     ])
 })();
