@@ -28,7 +28,7 @@
                     photo.lat = data.lat;
                     photo.lng = data.lng;
                     var marker = new google.maps.Marker({
-                        position: new google.maps.LatLng(23.787701, 120.959473),
+                        position: new google.maps.LatLng(photo.lat, photo.lng),
                         map: map,
                         title: 'I\'m a marker'
                     });
@@ -41,7 +41,7 @@
                         marker.setPosition(new google.maps.LatLng(event.latLng.lat(), event.latLng.lng()))
                         $http.post('/api/gps', photo)
                             .success(function(status) {
-                                console.log('success');
+                                console.log(status);
                             })
                             .error(function(status) {
                                 console.log('err')
