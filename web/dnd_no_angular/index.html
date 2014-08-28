@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <style type="text/css">
+    #drop {
+        background-color: yellow;
+        width: 400px;
+        height: 400px;
+    }
+    img{
+        width: 100%;
+    }
+    </style>
+    <script>
+    function allowDrop(e) {
+        e.preventDefault();
+    }
+
+    function drop(e) {
+        e.preventDefault(); // stops the browser from redirecting off to the image.
+
+        var files = e.dataTransfer.files;
+        var file = files[0];
+
+        var img = document.createElement("img");
+        document.getElementById('drop').appendChild(img); 
+
+        var reader = new FileReader();
+        reader.onload = (function(aImg) {
+            return function(e) {
+                aImg.src = e.target.result;
+            };
+        })(img);
+
+        reader.readAsDataURL(file);
+    }
+    </script>
+</head>
+
+<body>
+
+    I'm a drop area~!
+    <div id="drop" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="">
+    </div>
+
+</body>
+
+</html>
