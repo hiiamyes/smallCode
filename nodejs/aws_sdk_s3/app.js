@@ -63,7 +63,8 @@ function uploadPhoto() {
     fs.readFile('photo.JPG', function(err, data) {
         var params = {
             Bucket: 'hiiamyestestbbb',
-            Key: 'photo1',
+            Key: 'photo.jpg',
+			ACL: 'public-read',
             Body: data,
             ContentType: 'image/jpeg'
         };
