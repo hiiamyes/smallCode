@@ -28,6 +28,9 @@ rl.question('action:', function(answer) {
         case '5':
             deletePhoto();
             break;
+		case '6':
+			savePhoto();
+			break;
     }
 });
 
@@ -100,3 +103,28 @@ function deletePhoto() {
         }
     });
 }
+
+function savePhoto(){
+	var params = {
+		Bucket: 'hiiamyestestbbb',
+		Key: 'photo1'
+	}
+	s3.getObject(params, function(err, data){
+		if(err){
+			console.log('err'+err);
+		}else{
+			console.log(data);
+			fs.writeFile('savePhoto.jpg', data.Body, function(err){
+				if(err) throw err;
+				console.log('saved');
+			});
+		}		
+	});
+}
+
+
+
+
+
+
+
