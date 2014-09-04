@@ -1,4 +1,12 @@
-#Node.js
+# Node.js
 
 **/node_modules
 config.json
+
+
+# Android
+*.iml
+.gradle
+.idea
+build/
+local.properties
