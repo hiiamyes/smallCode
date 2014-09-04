@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:padding="20dp"
+    android:background="#77ffff00">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="Blue is fragment_main\nwith 50dp padding\n\nYellow is fragment_page\nwith 20dp padding\n\nGreen is TextView"
+        android:textSize="24sp"
+        android:background="#00ff00" />
+</LinearLayout>
