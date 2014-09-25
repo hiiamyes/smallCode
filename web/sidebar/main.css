@@ -1,0 +1,24 @@
+html, body {
+    margin: 0px;
+    height: 100%;
+}
+.sidebar {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    background-color: green;
+}
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*z-index: 1;*/
+    left: 0px;
+    background-color: red;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
+.content.with-menu {
+    background-color: yellow;
+    left: 300px;
+}

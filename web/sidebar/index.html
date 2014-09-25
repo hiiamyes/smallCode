@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app>
+
+<head>
+
+    <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+
+</head>
+
+<body>
+
+    <div>
+        <div class="sidebar">
+            i'm sidebar
+        </div>
+
+        <div class="content" ng-class="state">            
+            <input type="button" value="open sidebar" ng-click="state='with-menu'">
+            <input type="button" value="close sidebar" ng-click="state=''">
+            <br>
+            i'm content
+        </div>
+    </div>
+
+
+</body>
+
+</html>
